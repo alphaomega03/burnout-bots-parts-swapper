@@ -1,0 +1,28 @@
+.inventory-cell {
+  width: 36px;
+  height: 36px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center; /* align items in Main Axis */
+  align-items: center; /* align items in Cross Axis */
+  align-content: center; /* Extra space in Cross Axis */
+  background-image: url('http://i.imgur.com/nOqKSbE.png');
+  background-position: -229px -331px;
+}
+
+.inventory-cell:first-child {
+  width: 38px;
+  padding-left: 2px;
+  
+  background-position: -190px -331px;
+}
+
+.inventory-cell:last-child {
+  width: 38px;
+  padding-right: 10px;
+  
+  background-position: -266px -331px;
+}

@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "sonorous-hangar-353212",
+  "private_key_id": "47d3b2de41af20efbdcda214e6df8b0c340de2a6",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC//r5kgXxSXzl6\nmFnm6XcoxcsizdCmpwhUykxL1OAtNZg134quORWUwGAMtqRtXw0GCIAzk3XsXr6W\nz5+KXRzUSXLm0NJm4nwEKXh+bhdp2V6lB8XJ533pgc203f+3M9BgskN7DeBMIYaT\nv8zPbgPee8914mswn5eg/3mTEuWRJTJcvcOYnJ8VpBBvobo+U8VQW/dZQZDDSru7\nH53q78qvXxeFuLzYKswYsbjT1fRL6PoQYtiD/TaetTX9sZ9oXd+iPHoRMvBhruHi\nICBQugqSzx84Iy5Rq1v4FUoj0pYyX0ZhV3aQ3CvZEvoHFSmC2KZ2h+RAPrh5hIOW\n0tIN0ZAtAgMBAAECgf9PeMUBKpf+kcFjwd+W4AyumB/bYc2eYTArPhojjb5ws/pE\nuOVh0gwDOeJmC3g3iTpJxQfUlcZk1TlTIozv9L0Cu+ztaqTgJKx1LrVTwi0zI0bO\nKwuaXNowkgpHMXsn2jEaGcD3FRQg1Z2jV6d38OdTwZavX826fWYKehu/IwrBRNLN\nShHDnhAMUJALP+GdoR8n8Gu/nWNZKgx5j4wdQfLfHxkMD0QSDp83HJsFWstG5zHv\nVrJZX9mVRFiwAomzzXL6MN3c0x8P6Y9St3pDMy+XCOuytrOR6GZ/IkjDG+W6rZHb\n1JT7+zOI9feR4jsfL/qmqOOfj4nFr44kEf8XbeECgYEA7O2z+hSN7sM8z+D+3zE+\nN2RgNaeZMRCfIgwXJD+DZmyqjCqjKk2FChKoS9FlBuMhxkWRm8pqc8DDONnFtynS\nZx4V1iyBxHdDbBiS1fKNKvGsfFvn4EOJLvYodaQ6ka2pKXhtIV0Tqr5bwOE5GCPV\nfVir87dw/Qoe1Qwtbzs8ylECgYEAz3MdQ4xiNmeOcYmxxeAfnEqJtB1Rjmm/A85q\nlf7Wx1IT4iktx7Kx75a+4vxBil0HIQSOKUQ7jRicEv4tt9ErhHut5wFhkVUzHhYw\n7DMllu/C8UvC1d2iC9GvrLoS691uxGaesubjCG71oLbEyw5whBn7Ac78DHKkGweQ\nhPp2FR0CgYEAgLNe4Knpr5k+n22JBZSqR0yvNnYkMRLmXohSyc32gtzkh99hYslZ\nS293HDhSuLsIzbtcrVP3H4nGgktJq4V8VadyFTV4CFEAvudaW/210W4WVDdYbepB\nytDMiZr8dcXv7icMoOL+m/FrxgqSCRruDXjtbyZmqg2lUfWbeKClFQECgYEAycCB\nkGUiSxjxnpg0jWYIOB8Bx2rQG3nabKA+ZrxeM6Eud0BnJpUymfl4khaUwzTwLvtY\nKugSJontmEcdPW0vLnx+R3C/a/F5cmRQlha0ExQA+l0dEpOm+mmmuYyJxFwpUtce\ntoz39ga72d6Gi5jycnc1969Oz+hak3MK6VkQqD0CgYEA0FT4TU/Uj4E2wNW5ImI8\n0p88I0l4XAAbcwoW4VlxX/cr0bicHXAWI7qrM3itu2de7LnBZusAN/tFMRCsgCCQ\nL5yMs1jayqmmLEZxniyUO0vHyS7nr3kXE9EVoIcK3UN0JCdt+5QBEkFuP6m0pCAE\nJX/gePAvrvoyLgfH7A4SXv8=\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase@sonorous-hangar-353212.iam.gserviceaccount.com",
+  "client_id": "109063108406900063200",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase%40sonorous-hangar-353212.iam.gserviceaccount.com"
+}

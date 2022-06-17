@@ -14,3 +14,147 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.inventory-table {
+  padding-right: 80px;
+  padding-left: 80px;
+}
+
+.inventory-cell {
+  width: 36px;
+  height: 36px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center; /* align items in Main Axis */
+  align-items: center; /* align items in Cross Axis */
+  align-content: center; /* Extra space in Cross Axis */
+  background-image: url('http://i.imgur.com/nOqKSbE.png');
+  background-position: -229px -331px;
+}
+
+.inventory-cell:first-child {
+  width: 38px;
+  padding-left: 2px;
+  
+  background-position: -190px -331px;
+}
+
+.inventory-cell:last-child {
+  width: 38px;
+  padding-right: 2px;
+  
+  background-position: -266px -331px;
+}
+
+.inventory-row:first-child .inventory-cell
+{
+    height: 38px;
+    padding-top: 2px;
+    
+    background-position: -229px -292px;
+}
+
+/* bottom ROW */
+.inventory-row:last-child .inventory-cell
+{
+    height: 38px;
+    padding-bottom: 2px;
+    
+    background-position: -229px -368px;
+}
+
+/* top left */
+.inventory-row:first-child .inventory-cell:first-child
+{
+    width: 38px;
+    height: 38px;
+    
+    background-position: -190px -292px;
+}
+
+/* top right */
+.inventory-row:first-child .inventory-cell:last-child
+{
+    width: 38px;
+    height: 38px;
+    
+    background-position: -266px -292px;
+}
+
+/* bottom left */
+.inventory-row:last-child .inventory-cell:first-child
+{
+    width: 38px;
+    height: 38px;
+    
+    background-position: -190px -368px;
+}
+
+/* bottom right */
+.inventory-row:last-child .inventory-cell:last-child
+{
+    width: 38px;
+    height: 38px;
+    
+    background-position: -266px -368px;
+}
+
+/* single horizontal */
+.inventory-row:only-child .inventory-cell
+{
+    height: 40px;
+    
+    background-position: -613px -286px;
+}
+/* single horizontal left */
+.inventory-row:only-child .inventory-cell:first-child
+{
+    width: 38px;
+    height: 40px;
+    
+    background-position: -574px -286px;
+}
+/* single horizontal right */
+.inventory-row:only-child .inventory-cell:last-child
+{
+    width: 38px;
+    height: 40px;
+    
+    background-position: -650px -286px;
+}
+
+/* single vertical */
+.inventory-row .inventory-cell:only-child
+{
+    width: 40px;
+    
+    background-position: -563px -463px;
+}
+/* single vertical top */
+.inventory-row:first-child .inventory-cell:only-child
+{
+    width: 40px;
+    height: 38px;
+    
+    background-position: -563px -424px;
+}
+/* single vertical bottom */
+.inventory-row:last-child .inventory-cell:only-child
+{
+    width: 40px;
+    height: 38px;
+    
+    background-position: -563px -500px;
+}
+
+/* single by singel */
+.inventory-row:only-child .inventory-cell:only-child
+{
+    width: 40px;
+    height: 40px;
+    
+    background-position: -30px -288px;
+}
