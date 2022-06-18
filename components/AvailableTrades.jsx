@@ -11,9 +11,7 @@ export default function AvailableTrades() {
   const { nfts, doesUserOwnTokenId } = useContext(NFTContext)
   const { setAskTokenId, askTokenId } = useContext(TradeContext)
 
-  console.log('askTokenId', askTokenId)
 
-// const onPartClick 
   
   return (
     <InventoryTable className="inventory-table">

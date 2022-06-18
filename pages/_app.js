@@ -6,6 +6,7 @@ import { HTML5Backend } from 'react-dnd-html5-backend'
 import { PositionContext, usePosition } from '../context/PositionContext'
 import { NFTContext, useNFT } from '../context/NFTContext'
 import { TradeContext, useTrade } from '../context/TradeContext'
+import { OrderContext, useOrders } from '../context/OrderContext'
 function MyApp({ Component, pageProps }) {
   return (
     <MoralisProvider
@@ -16,7 +17,9 @@ function MyApp({ Component, pageProps }) {
       <PositionContext.Provider value={usePosition()}>
         <NFTContext.Provider value={useNFT()}>
           <TradeContext.Provider value={useTrade()}>
-            <Component {...pageProps} />
+            <OrderContext.Provider value={useOrders()}>
+              <Component {...pageProps} />
+            </OrderContext.Provider>
           </TradeContext.Provider>
         </NFTContext.Provider>
       </PositionContext.Provider>

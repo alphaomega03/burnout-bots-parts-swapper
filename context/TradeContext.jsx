@@ -2,6 +2,8 @@ import { createContext, useState } from "react"
 import { CONTRACT_ADDRESS, CHAIN_ID } from "../consts"
 import { NftSwap } from '@traderxyz/nft-swap-sdk'
 import { postOrder } from '../requests/'
+import { v4 as uuidv4 } from 'uuid'
+import moment from 'moment'
 
 export const useTrade = () => {
   const [askTokenId, setAskTokenId] = useState(undefined)
@@ -14,8 +16,6 @@ export const useTrade = () => {
   }
 
   const submitOrder = async (ownerAddress, signer) => {
-    console.log('order submit', ownerAddress)
-    console.log('signer', signer)
     const BID_PART = {
       tokenAddress: CONTRACT_ADDRESS,
       tokenId: bidTokenId,
@@ -52,17 +52,24 @@ export const useTrade = () => {
       [ASK_PART],
       ownerAddress,
       {
-        takerAddress: recipientAddress
+        takerAddress: recipientAddress.toLowerCase()
       }
     )
 
-    console.log('order', order)
-    
     const signedOrder = await nftSwapSdk.signOrder(order, ownerAddress)
+    const orderStatus = await nftSwapSdk.getOrderStatus(signedOrder)
 
-    console.log('signedOrder', signedOrder)
+    const body = {
+      id: uuidv4(),
+      bidTokenId,
+      askTokenId,
+      orderStatus,
+      expiresIn: moment().add(parseInt(signedOrder.expirationTimeSeconds), 'seconds').valueOf(),
+      orderData: signedOrder
+    }
 
-    postOrder(signedOrder).then((res) => {
+
+    postOrder(body).then((res) => {
       console.log('res', res)
     })
     // const

@@ -1,8 +1,20 @@
 import axios from "axios"
 import { API_SERVER_BASE_URL } from "../consts"
-export const postOrder = (signedOrder) => {
+export const postOrder = (body) => {
   return axios.post(
-    `${API_SERVER_BASE_URL}/submitOrder`,
-    signedOrder
+    `/api/postOrder`,
+    body
+  )
+}
+
+export const getMakerOrdersForAddress = (address) => {
+  return axios.get(
+    `/api/makerOrders/${address}`
+  )
+}
+
+export const getTakerOrdersForAddress = (address) => {
+  return axios.get(
+    `/api/takerOrders/${address}`
   )
 }

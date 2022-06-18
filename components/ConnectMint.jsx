@@ -9,6 +9,9 @@ import AvailableTrades from './AvailableTrades'
 import { InventoryCell } from './inventory/ui'
 import { Button, Space, Input } from 'antd'
 import { TradeContext } from '../context/TradeContext'
+import Link from 'next/link'
+import Orders from './orders/Orders'
+
 
 export default function ConnectMint() {
   const { account, enableWeb3 } = useMoralis()
@@ -45,10 +48,8 @@ export default function ConnectMint() {
               Submit Order
             </Button>
           </FormSpace>
-
         </Space>
-
-          
+        <Orders />
       </div>
     )
   } else {
