@@ -7,6 +7,7 @@ import {
 import { OrderContext } from '../../context/OrderContext'
 import moment from 'moment'
 import { ORDER_STATUS_V3_TO_DISPLAY_NAME } from "../../consts"
+import { RPGTable } from "./ui"
 const { Text } = Typography
 
 
@@ -71,9 +72,10 @@ export default function MakerOrders() {
     <>
       <Text>Your Orders</Text>
 
-      <Table
+      <RPGTable
         columns={columns}
         dataSource={makerOrders}
+        pagination={{ hideOnSinglePage: true }}
       />
     </>
   )
