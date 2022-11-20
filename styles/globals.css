@@ -1,5 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: "Pixel";
+    src: url("../fonts/pixel.ttf")
+  }
+
 html,
 body {
+background-image: url("/layer-1.png");
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
@@ -15,17 +25,1442 @@ a {
   box-sizing: border-box;
 }
 
-.inventory-table {
-  padding-right: 80px;
-  padding-left: 80px;
+.trade-container-border {
+    min-height: 25vh;
+    min-width: 84vw;
+    background-image: url(/layer-2e.png);
+    background-size: 100%;
+    background-position-x: 117%;
+    background-position-y: 51%;
+    background-repeat: no-repeat;
+ }
+ 
+ .trade-container-4 {
+    background-image: url(/layer-2d.png);
+    min-height: 58vh;
+    min-width: 84vw;
+    z-index: -1;
+    background-size: 136% 250%;
+    background-position-x: 52%;
+    background-position-y: 10.5%;
+    background-repeat: no-repeat;
+    margin-bottom: 5vh;
+ }
+ 
+ .trade-container-1 {    
+     display: flex;
+     border: none;
+     justify-content: flex-start;
+     border-top: none;
+     border-left: none;
+     border-right: none;
+     min-height: 55vh;
+     min-width: 63vw;
+     margin-bottom: 0px;
+     /* background-image: url(/layer-2a.png); */
+     background-repeat: no-repeat;
+     border-image-source: url(/layer-2e.png);
+     z-index: 1;
+ }
+
+ .user-container {
+    display: flex;
+    border: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background-image: url(/user-items-container.png);
+    /* border-image-source: url(/layer-2e.png); */
+    background-size: 98% 50%;
+    min-width: 82.2vw;
+    min-height: 72vh;
+    background-size: 100.5% 89%;
+    background-position-y: 1.7%;
+    background-position-x: -359%;
+    z-index: 1;
+    background-repeat: no-repeat;
+}
+
+.trade-controls-container {
+    background-image: url(/trade-controls-container.png);
+    min-height: 74vh;
+    min-width: 35vw;
+    background-position-y: -0.2%;
+    background-position-x: 50.6%;
+    background-size: 628.2% 217%;
+}
+
+
+.trade-controls {
+    height: 74vh;
+}
+
+.trade-partner-container {
+    background-image: url(/trade-partner-container.png);
+    height: 72vh;
+    /* width: 82.2vw; */
+    background-size: 98.5% 89%;
+    background-position-x: 3.1%;
+    background-position-y: -4.5%;
+    background-repeat: no-repeat;
+}
+
+.user-inventory-container {
+    min-height: 73.2vh;
+    min-width: 88vw;
+    background-position-x: 0.4%;
+    background-position-y: -0.5%;
+    background-size: 236% 218.6%;
+    z-index: 1;
+    background-repeat: no-repeat;
+    background-image: url(/user-parts.png);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.trade-partner-inventory-container {
+    background-position-x: 159.4%;
+    background-position-y: -1.9%;
+    background-size: 158% 202.8%;
+    z-index: 1;
+    min-width: 82.2vw;
+    min-height: 72vh;
+    background-image: url(/trade-partner-parts.png);
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-trade-window {
+    min-width: 19.3vw;
+    min-height: 29vh;
+    margin-left: 6vw;
+    background-image: url(/user-parts-drop.png);
+    background-repeat: no-repeat;
+    background-position: -82.8% 86.5%;
+    background-size: 91% 81%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.trade-partner-trade-window {
+    background-image: url(/trade-partner-window.png);
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-trade-window > *{
+    margin-top: 2.3vh;
+    margin-left: 1vw;
+}
+.user-trade-items {
+    margin-left: 15vw;
+    min-width: 43vw;
+    min-height: 10vh;
+    display: flex;
+    flex-direction: row;
+}
+
+.trade-partner-trade-items {
+    width: 10vw;
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+}
+
+.trade-partner-cell-1 {
+    background-image: url(/trade-partner-cell-1.png);
+    background-repeat: no-repeat;
+    width: 10vw;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.trade-partner-cell-2 {
+    background-image: url(/trade-partner-cell-2.png);
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.trade-partner-cell-3 {
+    background-image: url(/trade-partner-cell-3.png);
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.trade-partner-cell-4 {
+    background-image: url(/trade-partner-cell-4.png);
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.submit-order {
+    background-image: url(/submit-btn.png);
+    width: 12vw;
+    height: 8vh;
+    background-repeat: no-repeat;
+    font-family: 'Press Start 2P', cursive;
+    color: 'white';
+    font-size: 10px;
+}
+
+.trade-partner-address {
+    background-image: url(/trade-partner-input.png);
+    width: 10.3vw;
+    height: 3.9vh;
+    padding-left: 13px;
+    background-position-x: 100%;
+    background-size: 101% 100%;
+    background-repeat: no-repeat;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 8px;
+    text-overflow: ellipsis;
+}
+
+.clear-order {
+    background-image: url(/clear-btn.png);
+    width: 12vw;
+    height: 8vh;
+    background-repeat: no-repeat;
+    font-family: 'Press Start 2P', cursive;
+    color: 'white';
+    font-size: 10px;
+}
+
+/* .trade-partner-trade-items */
+
+.user-cell-1 {
+    background-image: url(/user-parts-cell-1.png);
+    background-repeat: no-repeat;
+    height: 10vh;
+    width: 10vw;
+    background-size: 94% 97.3%;
+    background-position: 100% 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-cell-item-1{
+    margin-left: 1vw;
+}
+
+.user-cell-2 {
+    background-image: url(/user-parts-cell-2.png);
+    background-repeat: no-repeat;
+    height: 10vh;
+    width: 10vw;
+    background-size: 94% 97.3%;
+    background-position: 100% 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-cell-3 {
+    background-image: url(/user-parts-cell-3.png);
+    background-repeat: no-repeat;
+    height: 10vh;
+    width: 10vw;
+    background-size: 94% 97.3%;
+    background-position: 100% 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.user-cell-4 {
+    background-image: url(/user-parts-cell-4.png);
+    background-repeat: no-repeat;
+    height: 10vh;
+    width: 10vw;
+    background-size: 94% 97.3%;
+    background-position: 100% 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+ 
+@media (min-width: 640px) {
+    .trade-container-1 {    
+        display: flex;
+        border: none;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        /* background-image: url(/layer-2a.png); */
+        border-image-source: url(/layer-2e.png);
+        background-size: 100%;
+        min-width: 195vw;
+        min-height: 30vh;
+        /* margin-bottom: -23.3vh; */
+        background-position-y: 4%;
+        z-index: 1;
+    }
+    .user-container {
+        min-width: 82.2vw;
+        min-height: 72vh;
+        background-size: 100.5% 89%;
+        background-position-y: 1.7%;
+        background-position-x: -359%;
+    }
+    .trade-controls-container {
+        min-height: 74vh;
+        min-width: 35vw;
+        background-position-y: -0.2%;
+        background-position-x: 50.6%;
+        background-size: 628.2% 217%;
+    }
+    .trade-controls {
+        height: 74vh;
+    }
+    .trade-partner-container {
+        background-image: url(/trade-partner-container.png);
+        min-height: 72vh;
+        /* min-width: 82.2vw; */
+        background-size: 99.5% 89%;
+        background-position-x: 3.1%;
+        background-position-y: -4.5%;
+        background-repeat: no-repeat;
+    }
+    .user-inventory-container {
+        min-height: 81.1vh;
+        min-width: 84.2vw;
+        background-position-x: -1.6%;
+        background-position-y: -0.3%;
+        background-size: 230% 197.8%;
+    }
+    .user-trade-window {
+        min-width: 26.3vw;
+        min-height: 24vh;
+        background-position: -76.8% -37.5%;
+        background-size: 97% 93%;
+        background-position: -22.8% -46.5%;
+        background-size: 89% 88.4%;
+    }
+    .user-trade-items {
+        margin-left: 7vw;
+        min-width: 31vw;
+        min-height: 11vh;
+    }
+    .user-cell-1 {
+        height: 10vh;
+        width: 10vw;
+        background-size: 106% 100.1%;
+        background-position: -23% -113%;
+    }
+    .user-cell-item-1{
+        margin-left: 2vw;
+        margin-top: 0.4vh;
+    }
+    .user-cell-item-2 {
+        margin-top: 0.3vh;
+        margin-left: 0.8vw;
+    }
+    .user-cell-item-3 {
+        margin-top: 0.3vh;
+        margin-left: 1.2vw;
+    }
+    .user-cell-item-4 {
+        margin-top: 0.1vh;
+        margin-right: 0.8vw;
+    }
+    .user-trade-window > *{
+        margin-top: -4.4vh;
+        margin-left: -3vw;
+    }
+    .trade-partner-inventory-container {
+        background-position-x: 100.6%;
+        background-position-y: 0%;
+        background-size: 239% 154.9%;
+        z-index: 1;
+        min-width: 82.2vw;
+        min-height: 103.9vh;
+        background-image: url(/trade-partner-parts.png);
+        background-repeat: no-repeat;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .trade-partner-trade-window {
+        min-width: 27.3vw;
+        min-height: 38vh;
+        background-position: 26.4% 92.5%;
+        background-size: 69% 64%;
+    }
+    .trade-partner-trade-items {
+        width: 28vw;
+        height: 12vh;
+        display: flex;
+        flex-direction: row;
+        margin-right: 6vw;
+        margin-bottom: 39vh;
+    }
+    .trade-partner-cell-1 {
+        width: 7.8vw;
+        height: 10.1vh;
+        background-size: 103% 76%;
+        background-position: 39% 63%;
+    }
+    .trade-partner-cell-2 {
+        width: 6.2vw;
+        height: 9.9vh;
+        background-size: 99% 85%;
+        background-position: 100% 86%;
+    }
+    .trade-partner-cell-3 {
+        width: 6.1vw;
+        height: 9.8vh;
+        background-size: 101% 80.5%;
+        background-position: 163% 71.8%;
+    }
+    .trade-partner-cell-4 {
+        width: 6.3vw;
+        height: 11.9vh;
+        background-size: 90.7% 62%;
+        background-position: -18% 39%;
+    }
+    .trade-partner-cell-item-1 {
+        margin-left: 2vw;
+    }
+    .trade-partner-cell-item-4 {
+        margin-right: 0.5vw;
+        margin-bottom: 2vh;
+    }
+    .trade-partner-trade-window > * {
+        margin-right: 4.4vw;
+        margin-top: 11vh;
+    }
+
+    .submit-order {
+        width: 36.5vw;
+        height: 9vh;
+        background-size: 100% 100%;
+    }
+
+    .trade-partner-address {
+        width: 18.3vw;
+        height: 3.9vh;
+        padding-left: 13px;
+        background-position-x: 100%;
+        background-size: 101% 100%;
+    }
+
+    .clear-order {
+        width: 33vw;
+        height: 8vh;
+        margin-bottom: 6vh;
+        background-size: 100% 100%;
+    }
+}
+
+@media (min-width: 768px) {
+    .trade-container-1 {    
+        display: flex;
+        border: none;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        /* background-image: url(/layer-2a.png); */
+        border-image-source: url(/layer-2e.png);
+        background-size: 100%;
+        min-width: 195vw;
+        min-height: 29vh;
+        margin-bottom: 0px;; 
+        background-position-y: -4%;
+        z-index: 1;
+    }
+
+    .user-container {
+        min-width: 82.2vw;
+        min-height: 72vh;
+        background-size: 100.5% 89%;
+        background-position-y: 21.7%;
+        background-position-x: -359%;
+    }
+    .trade-controls-container {
+        min-height: 94.2vh;
+        min-width: 35vw;
+        background-position-y: -2.2%;
+        background-position-x: 50.6%;
+        background-size: 637.2% 217%;
+    }
+
+
+    .trade-controls {
+        height: 94.2vh;
+    }
+    .trade-partner-container {
+        background-image: url(/trade-partner-container.png);
+        min-height: 92.3vh;
+        /* min-width: 84.2vw; */
+        background-size: 98.5% 89%;
+        background-position-x: 3.1%;
+        background-position-y: 17.5%;
+        background-repeat: no-repeat;
+    }
+    .user-inventory-container {
+        min-height: 105.6vh;
+        min-width: 84.2vw;
+        background-position-x: -1.6%;
+        background-position-y: -4.3%;
+        background-size: 230% 189.7%;
+    }
+    .user-trade-window {
+        min-width: 26.3vw;
+        min-height: 36vh;
+        background-position: 29.2% 69.5%;
+        background-size: 69% 94%;
+    }
+    .user-trade-items {
+        margin-left: 7vw;
+        min-width: 31vw;
+        min-height: 16vh;
+    }
+    .user-cell-1 {
+        height: 14vh;
+        width: 8vw;
+        background-size: 81% 96.3%;
+        background-position: 91.8% -282.9%;
+    }
+    .user-cell-2 {
+        height: 11vh;
+        width: 7.75vw;
+        background-size: 96.9% 111.7%;
+        background-position: -10.5% 61%;
+    }
+    .user-cell-3 {
+        height: 12vh;
+        width: 6.75vw;
+        background-size: 102% 103.3%;
+        background-position: 15% 296.1%;
+    }
+    .user-cell-4 {
+        height: 12vh;
+        width: 7.75vw;
+        background-size: 92% 97.3%;
+        background-position: 15% -75%;
+    }
+    .user-cell-item-1{
+        margin-left: 2vw;
+        margin-top: -2.4vh;
+    }
+    .user-cell-item-2 {
+        margin-top: 0.3vh;
+        margin-left: 0.8vw;
+    }
+    .user-cell-item-3 {
+        margin-top: -0.9vh;
+        margin-left: 0.7vw;
+    }
+    .user-cell-item-4 {
+        margin-top: -0.8vh;
+        margin-right: 0.8vw;
+    }
+    .user-trade-window > *{
+        margin-top: 0vh;
+        margin-left: -3vw;
+    }
+    .trade-partner-inventory-container {
+        background-position-x: 100.6%;
+        background-position-y: -2%;
+        background-size: 239% 197.1%;
+        z-index: 1;
+        min-width: 82.2vw;
+        min-height: 103.9vh;
+        background-image: url(/trade-partner-parts.png);
+        background-repeat: no-repeat;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .trade-partner-trade-window {
+        min-width: 27.3vw;
+        min-height: 38vh;
+        background-position: 22.4% 58.5%;
+        background-size: 68% 77%;
+    }
+    .trade-partner-trade-items {
+        width: 28vw;
+        height: 12vh;
+        display: flex;
+        flex-direction: row;
+        margin-right: 8vw;
+        margin-bottom: 8vh;
+    }
+    .trade-partner-cell-1 {
+        width: 8.8vw;
+        height: 11.8vh;
+        background-size: 85% 85%;
+        background-position: 100% 63%;
+    }
+    .trade-partner-cell-2 {
+        width: 6.2vw;
+        height: 11.9vh;
+        background-size: 103% 94%;
+        background-position: 100% 86%;
+    }
+    .trade-partner-cell-3 {
+        width: 6.1vw;
+        height: 11.8vh;
+        background-size: 101% 91%;
+        background-position: 163% 58%;
+    }
+    .trade-partner-cell-4 {
+        width: 6.3vw;
+        height: 11.9vh;
+        background-size: 90.7% 87%;
+        background-position: -18% 63%;
+    }
+    .trade-partner-cell-item-1 {
+        margin-left: 2vw;
+    }
+    .trade-partner-cell-item-4 {
+        margin-right: 0.5vw
+    }
+    .trade-partner-trade-window > * {
+        margin-right: 4.4vw;
+        margin-top: 1vh;
+    }
+    .submit-order {
+        width: 30.5vw;
+        height: 9vh;
+        background-size: 100% 100%;
+    }
+
+    .trade-partner-address {
+        width: 18.3vw;
+        height: 3.9vh;
+        padding-left: 13px;
+        background-position-x: 100%;
+        background-size: 101% 100%;
+    }
+
+    .clear-order {
+        width: 28vw;
+        height: 8vh;
+        background-size: 100% 100%;
+        margin-bottom: 6vh;
+    }
+}
+
+@media (min-width: 1024px) {
+    .trade-container-1 {    
+        display: flex;
+        border: none;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        /* background-image: url(/layer-2a.png); */
+        border-image-source: url(/layer-2e.png);
+        background-size: 100%;
+        min-width: 197vw;
+        min-height: 38vh;
+        margin-bottom: -36.2vh;
+        background-position-y: -4%;
+        z-index: 1;
+    }
+    .user-container {
+        min-width: 82.2vw;
+        min-height: 72vh;
+        background-size: 100.5% 88%;
+        background-position-y: 36.7%;
+        background-position-x: -359%;
+    }
+    .user-inventory-container {
+        min-height: 105.6vh;
+        min-width: 82.2vw;
+        background-position-x: -1.6%;
+        background-position-y: -4.3%;
+        background-size: 231% 205.6%;
+    }
+    .user-trade-window {
+        min-width: 26.3vw;
+        min-height: 47vh;
+        background-position: 29.2% 89.5%;
+        background-size: 69% 72%;
+    }
+    .trade-controls-container {
+        min-height: 108vh;
+        min-width: 35vw;
+        background-position-y: -4%;
+        background-position-x: 50.6%;
+        background-size: 628.2% 202%;
+    }
+
+    .trade-controls {
+        height: 108vh;
+    }
+    .trade-partner-container {
+        background-image: url(/trade-partner-container.png);
+        min-height: 100.6vh;
+        /* min-width: 82.2vw; */
+        background-size: 98.5% 87%;
+        background-position-x: 3.1%;
+        background-position-y: 28.5%;
+        background-repeat: no-repeat;
+    }
+    .user-trade-items {
+        margin-left: 7vw;
+        min-width: 31vw;
+        min-height: 16vh;
+    }
+    .user-cell-1 {
+        height: 13vh;
+        width: 8vw;
+        background-size: 85% 109.3%;
+        background-position: 94.8% 159%;
+    }
+    .user-cell-2 {
+        height: 12vh;
+        width: 7.75vw;
+        background-size: 101% 106.3%;
+        background-position: 605% 100%;
+    }
+    .user-cell-3 {
+        height: 12vh;
+        width: 6.75vw;
+        background-size: 107% 106.3%;
+        background-position: 14% 101.1%;
+    }
+    .user-cell-4 {
+        height: 12vh;
+        width: 7.75vw;
+        background-size: 85% 101.3%;
+        background-position: 15% 109%;
+    }
+
+    .user-cell-item-1{
+        margin-left: 1.2vw;
+    }
+    .user-cell-item-2 {
+        margin-top: -1.2vh;
+        margin-left: 0.8vw;
+    }
+    .user-cell-item-3 {
+        margin-top: -0.9vh;
+    }
+    .user-cell-item-4 {
+        margin-top: 0.2vh;
+        margin-right: 0.8vw;
+    }
+    .user-trade-window > *{
+        margin-top: 8vh;
+        margin-left: -3vw;
+    }
+    .trade-partner-inventory-container {
+        background-position-x: 101.4%;
+        background-position-y: -3.6%;
+        background-size: 237% 210.6%;
+        z-index: 1;
+        min-width: 82.2vw;
+        min-height: 103.9vh;
+        background-image: url(/trade-partner-parts.png);
+        background-repeat: no-repeat;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .trade-partner-trade-window {
+        min-width: 27.3vw;
+        min-height: 38vh;
+        background-position: 18.4% 32.5%;
+        background-size: 67% 84%;
+    }
+    .trade-partner-trade-items {
+        width: 28vw;
+        height: 12vh;
+        display: flex;
+        flex-direction: row;
+        margin-right: 8vw;
+        margin-bottom: -6vh;
+    }
+    .trade-partner-cell-1 {
+        width: 8.8vw;
+        height: 11.8vh;
+        background-size: 85% 93%;
+        background-position: 100% 2%;
+    }
+    .trade-partner-cell-2 {
+        width: 6.2vw;
+        height: 11.9vh;
+        background-size: 103% 101%;
+        background-position: 100% 263%;
+    }
+    .trade-partner-cell-3 {
+        width: 6.1vw;
+        height: 11.8vh;
+        background-size: 101% 95%;
+        background-position: 163% -31.5%;
+    }
+    .trade-partner-cell-4 {
+        width: 6.3vw;
+        height: 11.9vh;
+        background-size: 90.7% 91%;
+        background-position: -18% 23%;
+    }
+    .trade-partner-cell-item-1 {
+        margin-left: 2vw;
+    }
+    .trade-partner-cell-item-4 {
+        margin-right: 0.5vw
+    }
+    .trade-partner-trade-window > * {
+        margin-right: 5.5vw;
+        margin-top: -3vh;
+    }
+    .submit-order {
+        width: 22.5vw;
+        height: 9vh;
+        background-size: 100% 100%;
+    }
+
+    .trade-partner-address {
+        width: 18.3vw;
+        height: 3.9vh;
+        padding-left: 13px;
+        background-position-x: 100%;
+        background-size: 101% 100%;
+    }
+
+    .clear-order {
+        width: 20vw;
+        height: 8vh;
+        background-size: 100% 100%;
+        margin-bottom: 6vh;
+    }
+}
+
+@media (min-width: 1280px) {
+    .trade-container-1 {    
+        display: flex;
+        border: none;
+        border-top: none;
+        border-left: none;
+        /* border-right: none;
+        background-image: url(/layer-2a.png); */
+        border-image-source: url(/layer-2e.png);
+        background-size: 100%;
+        min-width: 197vw;
+        min-height: 47vh;
+        margin-bottom: 0px;
+        background-position-y: -4%;
+        z-index: 1;
+    }
+    .user-container {
+        min-width: 82.2vw;
+        min-height: 100vh;
+        background-size: 100.5% 86%;
+        background-position-y: 46%;
+        background-position-x: -359%;
+    }
+    .user-inventory-container {
+        min-height: 105.6vh;
+        min-width: 82.2vw;
+        background-position-x: -1.6%;
+        background-position-y: -5.8%;
+        background-size: 231% 202.6%;
+        z-index: 1;
+        background-repeat: no-repeat;
+        background-image: url(/user-parts.png);
+    }
+    .user-trade-window {
+        min-width: 26.3vw;
+        min-height: 47vh;
+        background-position: 29.2% 89.5%;
+        background-size: 69% 72%;
+    }
+
+
+    .trade-controls-container {
+        min-height: 104vh;
+        min-width: 35vw;
+        background-position-y: -6%;
+        background-position-x: 50.6%;
+        background-size: 629.2% 205.2%;
+    }
+
+
+    .trade-controls {
+        height: 104vh;
+    }
+    .trade-partner-container {
+        background-image: url(/trade-partner-container.png);
+        min-height: 100vh;
+        width: 82.2vw;
+        background-size: 98.5% 84%;
+        background-position-x: 3.1%;
+        background-position-y: 42.5%;
+        background-repeat: no-repeat;
+    }
+    .user-trade-items {
+        margin-left: 7vw;
+        min-width: 31vw;
+        min-height: 16vh;
+    }
+    .user-cell-1 {
+        height: 13vh;
+        width: 8vw;
+        background-size: 82% 107.3%;
+        background-position: 124.8% 159%
+    }
+    .user-cell-2 {
+        height: 12vh;
+        width: 7.75vw;
+        background-size: 104% 99.6%;
+        background-position: -24% 171.9%
+    }
+    .user-cell-3 {
+        height: 12vh;
+        width: 6.75vw;
+        background-size: 93% 100.3%;
+        background-position: 16% -801.9%;
+    }
+    .user-cell-4 {
+        height: 12.6vh;
+        width: 7.75vw;
+        background-size: 83% 95.3%;
+        background-position: -19% 91%;
+    }
+    .user-cell-item-1{
+        margin-left: 2.2vw;
+        margin-top: -1.1vh;
+    }
+
+    .user-cell-item-2 {
+        margin-top: 0.3vh;
+        margin-left: 0.8vw;
+    }
+    .user-cell-item-3 {
+        margin-top: 0.4vh;
+    }
+    .user-cell-item-4 {
+        margin-top: 0.2vh;
+        margin-right: 0.8vw;
+    }
+    .user-trade-window > *{
+        margin-top: 8vh;
+        margin-left: -3vw;
+    }
+    .trade-partner-inventory-container {
+        background-position-x: 101.4%;
+        background-position-y: -5.9%;
+        background-size: 237% 205.7%;
+        z-index: 1;
+        min-width: 82.2vw;
+        min-height: 103.9vh;
+        background-image: url(/trade-partner-parts.png);
+        background-repeat: no-repeat;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .trade-partner-trade-window {
+        min-width: 27.3vw;
+        min-height: 38vh;
+        background-position: 18.4% 52.5%;
+        background-size: 67% 81%;
+    }
+    .trade-partner-trade-window > * {
+        margin-right: 5.5vw;
+        margin-top: 0vh;
+    }
+
+    .trade-partner-trade-items {
+        width: 28vw;
+        height: 12vh;
+        display: flex;
+        flex-direction: row;
+        margin-right: 8vw;
+        margin-bottom: -6vh;
+    }
+    .trade-partner-cell-1 {
+        width: 8.8vw;
+        height: 11.8vh;
+        background-size: 85% 85%;
+        background-position: 100% 63%;
+    }
+    .trade-partner-cell-2 {
+        width: 6.2vw;
+        height: 11.9vh;
+        background-size: 103% 97%;
+        background-position: 100% 116%;
+    }
+    .trade-partner-cell-3 {
+        width: 6.1vw;
+        height: 11.8vh;
+        background-size: 101% 90%;
+        background-position: 163% 54%;
+    }
+    .trade-partner-cell-4 {
+        width: 6.3vw;
+        height: 11.9vh;
+        background-size: 90.7% 87%;
+        background-position: -18% 63%;
+    }
+    .trade-partner-cell-item-1 {
+        margin-left: 2vw;
+    }
+    .trade-partner-cell-item-4 {
+        margin-right: 0.5vw
+    }
+    .submit-order {
+        width: 19vw;
+        height: 9vh;
+        background-size: 100% 100%;
+    }
+
+    .trade-partner-address {
+        width: 10.3vw;
+        height: 3.9vh;
+        padding-left: 13px;
+        background-position-x: 100%;
+        background-size: 101% 100%;
+    }
+
+    .clear-order {
+        width: 17vw;
+        height: 8vh;
+        background-size: 100% 100%;
+    }
+}
+
+@media (min-width: 1536px) {
+    .trade-container-1 {    
+        display: flex;
+        border: none;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        /* background-image: url(/layer-2a.png); */
+        border-image-source: url(/layer-2e.png);
+        background-size: 100%;
+        min-width: 102vw;
+        min-height: 71vh;
+        background-position-y: -4%;
+        z-index: 1;
+    }
+    .user-container {
+        display: flex;
+        border: none;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        background-image: url(/user-items-container.png);
+        /* border-image-source: url(/layer-2e.png); */
+        background-size: 101% 89%;
+        min-width: 46vw;
+        min-height: 72vh;
+        margin-bottom: 1.7vh;
+        /* margin-bottom: -60.3vh; */
+        /* background-position-y: 0%; */
+        background-position-y: 25%;
+        background-position-x: 114%;
+        z-index: 1;
+        background-repeat: no-repeat;
+    }
+    .trade-controls-container {
+        min-height: 74vh;
+        min-width: 19vw;
+        background-position-y: -2.3%;
+        background-position-x: 50.6%;
+        background-size: 625.2% 214.4%
+    }
+
+    .trade-controls {
+        height: 74vh;
+    }
+    .trade-partner-container {
+        background-image: url(/trade-partner-container.png);
+        min-height: 74.5vh;
+        width: 46vw;
+        background-size: 87.5% 96%;
+        background-position-x: 3.1%;
+        background-position-y: 59.5%;
+        background-repeat: no-repeat;
+    }
+    .user-inventory-container {
+        min-height: 74.8vh;
+        min-width: 46vw;
+        background-position-x: -11.6%;
+        background-position-y: -2.5%;
+        background-size: 206% 211.7%;
+        z-index: 1;
+        background-repeat: no-repeat;
+        background-image: url(/user-parts.png);
+
+    }
+    .user-trade-window {
+        min-width: 19.3vw;
+        min-height: 29vh;
+        margin-left: 6vw;
+        background-image: url(/user-parts-drop.png);
+        background-repeat: no-repeat;
+        background-position: 48.2% 80.5%;
+        background-size: 49% 81%;
+    }
+    .user-trade-items {
+        margin-left: 7vw;
+        min-width: 15vw;
+        min-height: 10vh;
+    }
+    .user-cell-1 {
+        height: 10vh;
+        width: 4.75vw;
+        background-size: 96% 94.3%;
+        background-position: 402.8% 134%;
+    }
+    .user-cell-2 {
+        height: 10vh;
+        width: 3.41vw;
+        background-size: 97% 88.6%;
+        background-position: 78% 115.9%;
+    }
+    .user-cell-3 {
+        height: 10vh;
+        width: 3.41vw;
+        background-size: 107% 88.3%;
+        background-position: 14% 110.1%;
+    }
+    .user-cell-4 {
+        height: 10vh;
+        width: 4.21vw;
+        background-size: 83% 85.3%;
+        background-position: 15% 109%;
+    }
+    .user-cell-item-1{
+        margin-top: 1.6vh;
+        margin-left: 1.6vw;
+    }
+    .user-cell-item-2 {
+        margin-top: 1.6vh;
+        margin-left: 0.5vw;
+    }
+    .user-cell-item-3 {
+        margin-top: 1.5vh;
+        margin-left: 0.5vw;
+    }
+    .user-cell-item-4 {
+        margin-top: 1.4vh;
+        margin-right: 0.7vw;
+    }
+    .user-trade-window > *{
+        margin-top: 2.3vh;
+        margin-left: 0.9vw;
+    }
+    .trade-partner-inventory-container {
+        background-position-x: 110.7%;
+        background-position-y: -2.16%;
+        background-size: 212.2% 214.8%;
+        z-index: 1;
+        min-width: 40.3vw;
+        min-height: 74vh;
+    }
+    .trade-partner-trade-window {
+        min-width: 19.3vw;
+        min-height: 29vh;
+        background-position: 12.4% 52.5%;
+        background-size: 48% 76%;
+    }
+
+    .trade-partner-trade-window > * {
+        margin-right: 7.5vw;
+        margin-top: 0vh;
+    }
+
+    .trade-partner-trade-items {
+        width: 14vw;
+        height: 9vh;
+        display: flex;
+        flex-direction: row;
+        margin-right: 8vw;
+        margin-bottom: -1vh;
+    }
+    .trade-partner-cell-1 {
+        width: 3.8vw;
+        height: 8.8vh;
+        background-size: 94% 88%;
+        background-position: 100% 63%;
+    }
+    .trade-partner-cell-2 {
+        width: 3.2vw;
+        height: 8.9vh;
+        background-size: 103% 97%;
+        background-position: 100% 116%;
+    }
+    .trade-partner-cell-3 {
+        width: 3.1vw;
+        height: 8.8vh;
+        background-size: 101% 90%;
+        background-position: 163% 54%;
+    }
+    .trade-partner-cell-4 {
+        width: 3.3vw;
+        height: 8.9vh;
+        background-size: 90.7% 87%;
+        background-position: -18% 63%;
+    }
+    .trade-partner-cell-item-1 {
+        margin-left: 1vw;
+
+    }
+    .trade-partner-cell-item-4 {
+        margin-right: 0.5vw;
+        margin-bottom: 0vh;
+    }
+    .submit-order {
+        width: 15vw;
+        height: 9vh;
+        background-size: 100% 100%;
+    }
+
+    .trade-partner-address {
+        width: 10.3vw;
+        height: 3.9vh;
+        padding-left: 13px;
+        background-position-x: 100%;
+        background-size: 101% 100%;
+    }
+
+    .clear-order {
+        width: 14vw;
+        height: 8vh;
+        background-size: 100% 100%;
+    }
+}
+
+@media (min-width: 1900px) {
+    .trade-container-1 {    
+        display: flex;
+        border: none;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        justify-content: flex-start;
+        background-size: 100%;
+        min-width: 100vw;
+        min-height: 63vh;
+        background-repeat: no-repeat;
+        margin-bottom: 1.7vh;
+        background-position-x: -11%;
+        background-position-y: -2%;
+        z-index: 1;
+    }
+    .user-container {
+        display: flex;
+        border: none;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        background-image: url(/user-items-container.png);
+        background-size: 88.5% 88.7%;
+        min-height: 68vh;
+        min-width: 46vw;
+        margin-bottom: 1.7vh;
+        background-position-x: 106.4%;
+        background-position-y: 16%;
+        z-index: 1;
+        background-repeat: no-repeat;
+    }
+    .user-inventory-container {
+        min-height: 68vh;
+        min-width: 46vw;
+        background-position-x: -13.6%;
+        background-position-y: -1.9%;
+        background-size: 203% 214.3%;
+        z-index: 1;
+        background-repeat: no-repeat;
+        background-image: url(/user-parts.png);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .user-trade-window {
+        background-position: 54.2% 77.5%;
+        background-size: 46% 76%;
+    }
+
+    .trade-partner-inventory-container {
+        background-position-x: 159.4%;
+        background-position-y: -1.9%;
+        background-size: 158% 202.8%;
+        z-index: 1;
+        min-width: 82.2vw;
+        min-height: 72vh;
+    }
+
+    .user-trade-items {
+        margin-left: 7vw;
+        min-width: 15vw;
+        min-height: 10vh;
+    }
+    .trade-controls-container {
+        background-image: url(/trade-controls-container.png);
+        background-size: 649.6% 214.4%;
+        background-position-x: 51%;
+        background-position-y: -1.9%;
+        min-height: 68vh;
+        min-width: 20.6vw;
+        margin-bottom: 1.7vh;
+        background-repeat: no-repeat;
+    }
+
+    .trade-controls {
+        height: 68vh;
+    }
+    .user-cell-1 {
+        height: 9vh;
+        width: 4.3vw;
+        background-size: 88% 99.4%;
+        background-position: 170% 100%;
+    }
+
+    .user-cell-2 {
+        height: 9vh;
+        width: 3.43vw;
+        background-size: 101% 88.6%;
+        background-position: -11% 61.9%;
+    }
+    .user-cell-3 {
+        height: 8.3vh;
+        width: 3.23vw;
+        background-size: 94% 97.3%;
+        background-position: 49% 258.1%;
+    }
+    .user-cell-4 {
+        height: 8.5vh;
+        width: 3.53vw;
+        background-size: 94% 92.3%;
+        background-position: 22% 123%;
+    }
+    .user-cell-item-1{
+        margin-left: 1.6vw;
+        margin-top: 0.5vh;
+    }
+    .user-cell-item-2 {
+        margin-top: 0.5vh;
+    }
+    .user-cell-item-3 {
+        margin-top: 1.2vh;
+    }
+    .user-cell-item-4 {
+        margin-top: 0.9vh;
+        margin-right: 0.5vw;
+    }
+    .trade-partner-container {
+        background-image: url(/trade-partner-container.png);
+        height: 72vh;
+        width: 45.9vw;
+        background-size: 83.7% 89%;
+        background-position-x: 3.1%;
+        background-position-y: 19.5%;
+    }
+    .trade-partner-inventory-container {
+        background-position-x: 115.4%;
+        background-position-y: -1.9%;
+        background-size: 203% 202.8%;
+        z-index: 1;
+        min-width: 40.3vw;
+        min-height: 72vh;
+    }
+    .trade-partner-trade-window {
+        min-width: 19.3vw;
+        min-height: 29vh;
+        background-position: 6.2% 71.5%;
+        background-size: 46% 74%;
+    }
+
+    .trade-partner-trade-window > * {
+        margin-right: 9vw;
+        margin-top: 2vh;
+    }
+
+    .trade-partner-trade-items {
+        width: 14vw;
+        height: 9vh;
+        display: flex;
+        flex-direction: row;
+        margin-right: 10vw;
+        margin-bottom: 5vh;
+    }
+
+    .trade-partner-cell-1 {
+        width: 4.2vw;
+        height: 8vh;
+        background-size: 83% 88%;
+        background-position: 100% 59%;
+    }
+    .trade-partner-cell-2 {
+        width: 2.9vw;
+        height: 8vh;
+        background-size: 103% 97%;
+        background-position: 100% 100%;
+    }
+    .trade-partner-cell-3 {
+        width: 3.1vw;
+        height: 8vh;
+        background-size: 101% 91%;
+        background-position: 163% 46%;
+    }
+    .trade-partner-cell-4 {
+        width: 3.3vw;
+        height: 8vh;
+        background-size: 86.7% 87%;
+        background-position: -12% 63%;
+    }
+    .trade-partner-cell-item-1 {
+        margin-left: 1vw;
+    }
+    .trade-partner-cell-item-4 {
+        margin-right: 0.5vw;
+        margin-bottom: 0vh;
+    }
+
+    .submit-order {
+        width: 12vw;
+        height: 8vh;
+        background-size: 100% 100%;
+    }
+
+    .trade-partner-address {
+        background-image: url(/trade-partner-input.png);
+        width: 10.3vw;
+        height: 3.9vh;
+        padding-left: 13px;
+        background-position-x: 100%;
+        background-size: 101% 100%;
+    }
+
+    .clear-order {
+        background-image: url(/clear-btn.png);
+        width: 12vw;
+        height: 8vh;
+        background-size: 100% 100%;
+    }
 }
 
 .inventory-cell {
   width: 36px;
   height: 36px;
-
   flex-shrink: 0;
-
   display: flex;
   flex-direction: row;
   justify-content: center; /* align items in Main Axis */

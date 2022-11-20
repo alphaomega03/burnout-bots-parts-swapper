@@ -6,8 +6,8 @@ export default function Orders() {
   return (
     <div className={styles.container}>
       <div className={styles.main}>
-        <TakerOrders />        
         <MakerOrders />
+        <TakerOrders />        
       </div>
     </div>
   )

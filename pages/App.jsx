@@ -17,7 +17,6 @@ export default function App() {
 
     <main className={styles.main}>
       <div className={styles.grid}>
-        {/* <VirtualTerminal /> */}
         <ConnectMint />
       </div>
     </main>

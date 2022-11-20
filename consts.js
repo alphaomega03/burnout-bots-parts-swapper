@@ -1,9 +1,11 @@
 
-export const CONTRACT_ADDRESS = '0x0342Af0acca4271De4659a4e4D12E0AEcE218131'
+import { Network, Alchemy } from 'alchemy-sdk'
+
+export const CONTRACT_ADDRESS = '0x5DE8a0E46fFDaf44049263F99Ea2a16EE93d8105'
 export const IPFS_IMAGE_BASE_URI = 'https://gateway.pinata.cloud/ipfs/QmSjvSpwMZTiiQ4oDCwnQdsHFB1ZcBcdwPC9Q8212YdjKd'
-export const ALLOWED_CHAIN_IDS = ['0x1', '0x4']
-export const ETHER_SCAN_TX_URL_PREFIX = 'https://rinkeby.etherscan.io/tx/'
-export const CHAIN_ID = 4
+export const ALLOWED_CHAIN_IDS = ['0x1', '0x4', '0x5']
+export const ETHER_SCAN_TX_URL_PREFIX = process.env.IS_MAINNET ? 'https://etherscan.io/tx/' : 'https://goerli.etherscan.io/tx/'
+export const CHAIN_ID = process.env.IS_MAINNET ? 1 : 5 
 // export const API_SERVER_BASE_URL = 'https://endpoints-prod-rhy5sb5oqa-uc.a.run.app'
 export const ORDER_STATUS_V3_TO_DISPLAY_NAME = {
   '0': 'Invalid',
@@ -14,5 +16,36 @@ export const ORDER_STATUS_V3_TO_DISPLAY_NAME = {
   '5': 'Filled',
   '6': 'Canceled'
 }
+
+export const DISPLAY_NAME_TO_ORDER_STATUS_V3 = {
+  'Invalid': '0',
+  'Invalid Maker Asset Amount': '1',
+  'Invalid Taker Asset Amount': '2',
+  'Open': '3',
+  'Expired': '4',
+  'Filled': '5',
+  'Canceled': '6' 
+}
+
+export const ORDER_STATUS_V3_TO_COLOR = {
+  '0': 'red',
+  '1': 'red',
+  '2': 'red',
+  '3': 'green',
+  '4': 'warning',
+  '5': 'success',
+  '6': 'red'
+}
+
+export const GOERLI_ZEROEX_ADDRESSES = {
+  "exchange": "0xf91bb752490473b8342a3e964e855b9f9a2a668e",
+  "wrappedNativeToken": "0xb4fbf271143f4fbf7b91a5ded31805e42b2208d6"
+}
+
+export const NETWORK = process.env.IS_MAINNET ? Network.ETH_MAINNET : Network.ETH_GOERLI
+
+export const CANCELED_DISPLAY_NAME = 'Canceled'
+export const FILLED_DISPLAY_NAME = 'Filled'
+export const OPEN = 'Open'
 
 export const API_SERVER_BASE_URL = 'http://localhost:8080'

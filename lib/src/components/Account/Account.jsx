@@ -11,6 +11,9 @@ import Text from "antd/lib/typography/Text";
 import { connectors } from "./config";
 import { StyledButton } from "./ui";
 import { TradeContext } from '../../../../context/TradeContext'
+import { RPGConnectButton } from '../../../../components/orders/ui'
+import styles2 from '../../../../styles/Orders.module.css'
+
 
 const styles = {
   account: {
@@ -45,7 +48,7 @@ const styles = {
     marginBottom: "8px",
     height: "30px",
   },
-};
+}
 
 function Account() {
   const { authenticate, isAuthenticated, account, chainId, logout, enableWeb3 } =
@@ -56,7 +59,7 @@ function Account() {
     return (
       <>
         <div>
-          <StyledButton onClick={() => setIsAuthModalVisible(true)}>Connect</StyledButton>
+          <RPGConnectButton className="rpgui-button" onClick={() => setIsAuthModalVisible(true)}>Connect</RPGConnectButton>
         </div>
         <Modal
           visible={isAuthModalVisible}

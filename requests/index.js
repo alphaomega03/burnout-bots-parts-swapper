@@ -7,6 +7,13 @@ export const postOrder = (body) => {
   )
 }
 
+export const updateOrder = (body) => {
+  return axios.post(
+    `/api/updateOrder`,
+    body
+  )
+}
+
 export const getMakerOrdersForAddress = (address) => {
   return axios.get(
     `/api/makerOrders/${address}`

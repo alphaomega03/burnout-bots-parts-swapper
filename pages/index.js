@@ -1,7 +1,14 @@
 import App from './App'
-import {   BrowserRouter as Router } from 'react-router-dom'
+import { isDesktop } from 'react-device-detect'
+import Mobile from '../components/Mobile'
 export default function Home() {
-  return (
-    <App />
-  )
+  if(!isDesktop) {
+    return (
+      <Mobile />
+    )
+  } else {
+    return (
+      <App />
+    )
+  } 
 }

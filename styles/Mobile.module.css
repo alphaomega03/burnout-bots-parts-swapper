@@ -1,0 +1,14 @@
+.mobile {
+  background-color: rgb(2, 50, 153);
+  height: 100vh;
+  width: 100vw;
+  font-family: Pixel, sans-serif;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.message {
+  width: 80vw;
+}

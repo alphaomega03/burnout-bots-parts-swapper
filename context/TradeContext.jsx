@@ -1,6 +1,6 @@
 import { createContext, useState } from "react"
-import { CONTRACT_ADDRESS, CHAIN_ID } from "../consts"
-import { NftSwap } from '@traderxyz/nft-swap-sdk'
+import { CONTRACT_ADDRESS, CHAIN_ID, GOERLI_ZEROEX_ADDRESSES } from "../consts"
+import { NftSwap, NftSwapV4 } from '@traderxyz/nft-swap-sdk'
 import { postOrder } from '../requests/'
 import { v4 as uuidv4 } from 'uuid'
 import moment from 'moment'
@@ -15,6 +15,17 @@ export const useTrade = () => {
     return askTokenId && bidTokenId && recipientAddress.length !== 0
   }
 
+  const isOrderEmpty = () => {
+
+    return askTokenId === undefined && bidTokenId === undefined && recipientAddress.length === 0
+  }
+
+  const clearTrade = () => {
+    setAskTokenId(undefined)
+    setBidTokenId(undefined)
+    setRecipientAddress('')
+  }
+
   const submitOrder = async (ownerAddress, signer) => {
     const BID_PART = {
       tokenAddress: CONTRACT_ADDRESS,
@@ -22,13 +33,22 @@ export const useTrade = () => {
       type: 'ERC1155'
     }
 
+    console.log('BID PART', BID_PART)
+
     const ASK_PART = {
       tokenAddress: CONTRACT_ADDRESS,
       tokenId: askTokenId,
       type: 'ERC1155'
     }
 
+    console.log('ASK PART', ASK_PART)
+
     const nftSwapSdk = new NftSwap(signer.provider, signer, CHAIN_ID)
+ 
+    // console.log('signer.provider', signer.provider)
+    // console.log('signer', signer)
+    // console.log('ownerAddress', ownerAddress)
+
 
     const approvalStatus = await nftSwapSdk.loadApprovalStatus(
       BID_PART,
@@ -50,7 +70,7 @@ export const useTrade = () => {
     const order = nftSwapSdk.buildOrder(
       [BID_PART],
       [ASK_PART],
-      ownerAddress,
+      ownerAddress.toLowerCase(),
       {
         takerAddress: recipientAddress.toLowerCase()
       }
@@ -69,10 +89,7 @@ export const useTrade = () => {
     }
 
 
-    postOrder(body).then((res) => {
-      console.log('res', res)
-    })
-    // const
+    return postOrder(body)
   }
 
   return {
@@ -83,7 +100,9 @@ export const useTrade = () => {
     setBidTokenId,
     setRecipientAddress,
     isOrderReadyToSubmit,
-    submitOrder
+    isOrderEmpty,
+    submitOrder,
+    clearTrade
   }
 }
 

@@ -9,19 +9,23 @@ import { InventoryTable, InventoryRow, InventoryCell } from "./ui"
 import Image from "next/image"
 import { ItemTypes } from "../types"
 import { useDrag, DragPreviewImage } from 'react-dnd'
-import Cell from './Cell'
+import UserCell from './UserCell'
 import { uuid } from "@magic-sdk/provider"
+import { UserPositionContext } from "../../context/UserPositionContext"
 
 export default function Inventory() {
   const Web3Api = useMoralisWeb3Api()
   // const [nfts, setNFTs] = useState([])
 
-  const { addInventoryItem, inventoryItemPositions } = useContext(PositionContext)
+  const { addInventoryItem, inventoryItemPositions } = useContext(UserPositionContext)
   const { nfts, setNFTs, getNFTsFromWallet } = useContext(NFTContext)
-  
+
   useEffect(() => {
     getNFTsFromWallet(Web3Api).then((res) => {
       let splitNfts = []
+
+      let k = 0;
+      
       for(let i = 0; i < res.result.length; i++) {
         let j = 0
         while(j < res.result[i].amount) {
@@ -29,30 +33,27 @@ export default function Inventory() {
             ...res.result[i],
             amount: 1
           })
-          addInventoryItem(j, 0)
+          addInventoryItem(k, 0)
           j++
+          k++
         }
       }
       setNFTs(splitNfts)
     })
-  }, [Web3Api.Web3API.account])
+  }, [])
+
+  
   
   return (
     <InventoryTable className="inventory-table">
       <InventoryRow className="inventory-row">
-        {nfts.map((nft, i) => {
-          return <Cell nft={nft} key={uuid()} x={i} y={0}/>  
-        })}
-      </InventoryRow>
-      <InventoryRow className="inventory-row">
-          <InventoryCell className="inventory-cell"/>
-          <InventoryCell className="inventory-cell"/>
-          <InventoryCell className="inventory-cell"/>
-          <InventoryCell className="inventory-cell"/>
-          <InventoryCell className="inventory-cell"/>
-          <InventoryCell className="inventory-cell"/>
-          <InventoryCell className="inventory-cell"/>
-          <InventoryCell className="inventory-cell"/>
+        {
+          nfts.map((nft, i) => {
+            if(i < 4) {
+              return <UserCell nft={nft} key={uuid()} x={i} y={0}/>  
+            }
+          })
+        }
       </InventoryRow>
     </InventoryTable>
   )

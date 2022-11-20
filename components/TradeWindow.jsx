@@ -9,7 +9,7 @@ import { TradeContext } from '../context/TradeContext'
 export default function TradeWindow({ x, y}) {
   
   const { doesTradePositionHaveItem, addItemToTradeWindow } = useContext(PositionContext)
-  const { setBidTokenId } = useContext(TradeContext)
+  const { setAskTokenId } = useContext(TradeContext)
   const [ currentNft, setCurrentNft ] = useState(undefined)
   const ref = useRef(null)
 
@@ -19,7 +19,7 @@ export default function TradeWindow({ x, y}) {
       drop: monitor => {
         addItemToTradeWindow({x: monitor.x, y: monitor.y}, {x: x, y: y})
         setCurrentNft(monitor.nft)
-        setBidTokenId(monitor.nft.token_id)
+        setAskTokenId(monitor.nft.token_id)
       },
       collect: (monitor) => ({
         isOver: !!monitor.isOver()

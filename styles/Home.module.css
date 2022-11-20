@@ -1,13 +1,28 @@
 .container {
-  /* padding: 0 2rem; */
   background-color: #f0ffff;
-  /* https://thumbs.gfycat.com/GrandioseSpotlessKomododragon-size_restricted.gif */
-  /* background-image: url("https://c.tenor.com/Uhhx57c6DekAAAAC/television-static.gif"); */
-  /* background-image: url("https://66.media.tumblr.com/a820dcfc128863b53d5041d985140d26/aabe55b6f2844f0e-7f/s540x810/457013407aa6e2fe3dbe7df2d73297e3f753cd69.gif"); */
-  /* background-image: url("https://cdn.discordapp.com/attachments/793684563007766579/984819424022376477/10-4.png"); */
-  background: #332f2c;
+
+  background-image: url("/layer-1.png");
   background-repeat:no-repeat;
   background-size:cover;
+}
+
+@media (min-width: 640px) {
+    .container {
+        background-color: #f0ffff;
+        background-image: url(/layer-1.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 201vh;
+        width: 197vw;
+        background-position: 87%;
+    }
+}
+
+@media (min-width: 1536px) {
+  .container {
+    height: 100vh;
+    width: 100vw;
+  }
 }
 
 .main {
