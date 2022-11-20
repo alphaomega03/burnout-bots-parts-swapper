@@ -1,13 +1,13 @@
 import { createContext, useState } from "react"
 import { CONTRACT_ADDRESS, NETWORK } from "../consts"
-import { Alchemy } from "alchemy-sdk"
+import { Alchemy, Network } from "alchemy-sdk"
 
 export const useNFT = () => {
   const [nfts, setNFTs] = useState([])
 
   const settings = {
     apiKey: process.env.ALCHEMY_API_KEY,
-    network: NETWORK
+    network: Network.ETH_MAINNET
   }
 
   const alchemy = new Alchemy(settings)
@@ -15,6 +15,7 @@ export const useNFT = () => {
   const getNFTsFromWallet = async (address) => {
     console.log('address', address)
     console.log('contract address', CONTRACT_ADDRESS)
+    console.log('network', NETWORK)
     return alchemy.nft.getNftsForOwner(
       address,
       { contractAddresses: [CONTRACT_ADDRESS] }
