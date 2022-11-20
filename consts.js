@@ -4,8 +4,8 @@ import { Network, Alchemy } from 'alchemy-sdk'
 export const CONTRACT_ADDRESS = '0x5DE8a0E46fFDaf44049263F99Ea2a16EE93d8105'
 export const IPFS_IMAGE_BASE_URI = 'https://gateway.pinata.cloud/ipfs/QmSjvSpwMZTiiQ4oDCwnQdsHFB1ZcBcdwPC9Q8212YdjKd'
 export const ALLOWED_CHAIN_IDS = ['0x1', '0x4', '0x5']
-export const ETHER_SCAN_TX_URL_PREFIX = process.env.IS_MAINNET ? 'https://etherscan.io/tx/' : 'https://goerli.etherscan.io/tx/'
-export const CHAIN_ID = process.env.IS_MAINNET ? 1 : 5 
+export const ETHER_SCAN_TX_URL_PREFIX = 'https://etherscan.io/tx/'
+export const CHAIN_ID = 1 
 // export const API_SERVER_BASE_URL = 'https://endpoints-prod-rhy5sb5oqa-uc.a.run.app'
 export const ORDER_STATUS_V3_TO_DISPLAY_NAME = {
   '0': 'Invalid',
@@ -42,7 +42,7 @@ export const GOERLI_ZEROEX_ADDRESSES = {
   "wrappedNativeToken": "0xb4fbf271143f4fbf7b91a5ded31805e42b2208d6"
 }
 
-export const NETWORK = process.env.IS_MAINNET ? Network.ETH_MAINNET : Network.ETH_GOERLI
+export const NETWORK = Network.ETH_MAINNET
 
 export const CANCELED_DISPLAY_NAME = 'Canceled'
 export const FILLED_DISPLAY_NAME = 'Filled'

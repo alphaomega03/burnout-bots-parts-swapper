@@ -15,14 +15,11 @@ export default function UserInventory() {
 
   useEffect(() => {
     if(address) {
-      console.log('address', address)
       getNFTsFromWallet(address).then((res) => {
         let splitNfts = []
   
         let k = 0
-  
-        console.log('alchemy response', res)
-  
+    
         for(let i = 0; i < res.ownedNfts.length; i++) {
           let j = 0
           while(j < res.ownedNfts[i].balance) {
@@ -58,9 +55,6 @@ export default function UserInventory() {
     }
     return cells
   }
-
-  console.log('nfts', nfts)
-
 
   return (
     <div className="user-trade-items">

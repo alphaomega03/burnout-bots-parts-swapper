@@ -13,9 +13,6 @@ export const useNFT = () => {
   const alchemy = new Alchemy(settings)
   
   const getNFTsFromWallet = async (address) => {
-    console.log('address', address)
-    console.log('contract address', CONTRACT_ADDRESS)
-    console.log('network', NETWORK)
     return alchemy.nft.getNftsForOwner(
       address,
       { contractAddresses: [CONTRACT_ADDRESS] }
