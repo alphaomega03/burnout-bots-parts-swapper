@@ -14,31 +14,33 @@ export default function UserInventory() {
   const { address } = useAccount()
 
   useEffect(() => {
-    getNFTsFromWallet(address).then((res) => {
-      let splitNfts = []
-
-      let k = 0
-
-      console.log('alchemy response', res)
-
-      for(let i = 0; i < res.ownedNfts.length; i++) {
-        let j = 0
-        while(j < res.ownedNfts[i].balance) {
-          splitNfts.push({
-            token_id: res.ownedNfts[i].tokenId,
-            token_uri: res.ownedNfts[i]?.tokenUri.gateway,
-            ...res.ownedNfts[i],
-            amount: 1,
-          })
-          addInventoryItem(k, 0)
-          j++
-          k++
+    if(address) {
+      console.log('address', address)
+      getNFTsFromWallet(address).then((res) => {
+        let splitNfts = []
+  
+        let k = 0
+  
+        console.log('alchemy response', res)
+  
+        for(let i = 0; i < res.ownedNfts.length; i++) {
+          let j = 0
+          while(j < res.ownedNfts[i].balance) {
+            splitNfts.push({
+              token_id: res.ownedNfts[i].tokenId,
+              token_uri: res.ownedNfts[i]?.tokenUri.gateway,
+              ...res.ownedNfts[i],
+              amount: 1,
+            })
+            addInventoryItem(k, 0)
+            j++
+            k++
+          }
         }
-      }
-      console.log('split nfts', splitNfts)
-      setNFTs(splitNfts)
-    })
-  }, [])
+        setNFTs(splitNfts)
+      })
+    }
+  }, [address])
 
   const renderCells = () => {
     const cells = []
